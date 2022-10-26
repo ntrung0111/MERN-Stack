@@ -1,4 +1,4 @@
-# x-mern-stack
+# Funf-mern-stack
 
 ## MERN Stack
 

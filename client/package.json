@@ -1,5 +1,5 @@
 {
-  "name": "x-mern-stack-client",
+  "name": "funf-mern-stack-client",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:5000",
