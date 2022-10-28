@@ -10,7 +10,7 @@ import {
 
 import * as api from "../api/index.js";
 
-const socket = io.connect();
+const socket = io.connect(process.env.REACT_APP_SERVER_URL);
 
 export const getPosts = () => async (dispatch) => {
   try {

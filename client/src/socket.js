@@ -6,7 +6,7 @@ import { CREATE, DELETE, LIKE, UPDATE } from "./constants/actionTypes";
 
 const SocketClient = () => {
   const dispatch = useDispatch();
-  const socket = io.connect();
+  const socket = io.connect(process.env.REACT_APP_SERVER_URL);
 
   useEffect(() => {
     socket.emit("join");
