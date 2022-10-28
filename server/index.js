@@ -24,7 +24,11 @@ app.get("/", (req, res) => {
 
 // Socket
 const httpServer = createServer(app);
-const io = new Server(httpServer);
+const io = new Server(httpServer, {
+  cors: {
+    origin: "*",
+  },
+});
 
 io.on("connection", (socket) => {
   SocketServer(socket);
