@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { Container, AppBar, Typography, Grow, Grid } from "@material-ui/core";
+import { AppBar, Container, Grid, Grow, Typography } from "@material-ui/core";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
-import Posts from "./components/Posts/Posts";
 import Form from "./components/Form/Form";
-import { getPosts } from "./actions/posts";
-import useStyles from "./styles";
+import Posts from "./components/Posts/Posts";
 import memories from "./images/memories.png";
+
+import { getPosts } from "./actions/posts";
+
+import useStyles from "./styles";
+
+import SocketClient from "./socket";
 
 const App = () => {
   const [currentId, setCurrentId] = useState(0);
@@ -16,6 +20,8 @@ const App = () => {
   useEffect(() => {
     dispatch(getPosts());
   }, [currentId, dispatch]);
+
+  SocketClient();
 
   return (
     <Container maxWidth="lg">
