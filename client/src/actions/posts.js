@@ -10,7 +10,9 @@ import {
 
 import * as api from "../api/index.js";
 
-const socket = io.connect(process.env.REACT_APP_SERVER_URL);
+const socket = io.connect(process.env.REACT_APP_SERVER_URL, {
+  transports: ["websocket"],
+});
 
 export const getPosts = () => async (dispatch) => {
   try {
